@@ -15,24 +15,23 @@ class Dataframe {
     has $length = 5;
 
     method show() {
+        for @!columns -> $column {
+            print '|';
+            print $column.header;	
+        }
+        print '|';
+        print "\n";
 
-	for @!columns -> $column {
-	    print '|';
-	    print $column.header;	
-	}
-	print '|';
-	print "\n";
-
-	for 1..$length -> $idx {
-	    for @!columns -> $column {
-		print '|';
-		print $column.data[$idx-1];
-	    }
-	    print '|';
-	    print "\n";
-	}
-	print '|';
-	print "\n";
+        for 1..$length -> $idx {
+            for @!columns -> $column {
+            print '|';
+            print $column.data[$idx-1];
+            }
+            print '|';
+            print "\n";
+        }
+        print '|';
+        print "\n";
     }
 }
 
